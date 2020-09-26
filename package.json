@@ -1,11 +1,11 @@
 {
-  "name": "ajson",
+  "name": "@broadbrander/ajaj",
   "version": "0.1.0",
   "description": "A tiny HTTP client for the browser.",
-  "main": "dist/index.js",
+  "main": "dist/ajaj.min.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/BroadBrander/ajson.git"
+    "url": "https://github.com/BroadBrander/ajaj.git"
   },
   "keywords": [
     "ajax",
@@ -17,8 +17,8 @@
   "author": "BroadBrander",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/BroadBrander/ajson/issues"
+    "url": "https://github.com/BroadBrander/ajaj/issues"
   },
-  "homepage": "https://github.com/BroadBrander/ajson#readme",
+  "homepage": "https://github.com/BroadBrander/ajaj#readme",
   "dependencies": {}
 }
