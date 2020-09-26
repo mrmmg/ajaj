@@ -1,10 +1,10 @@
 /**
- * @package AJSON
+ * @package AJAJ
  * @author BroadBrander <info@broadbrander.com>
  * @license MIT
  * @description A tiny HTTP client for the browser.
  */
-window.ajson = function ({
+window.ajaj = function ({
   method: method = "GET", // HTTP request method (GET, POST, DELETE, PUT etc.)
   url: url, // URL to request
   async: async = true, // Boolean to set the http request async
