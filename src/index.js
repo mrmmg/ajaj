@@ -1,14 +1,17 @@
 /**
- * Do http request with XMLHttpRequest();
+ * @package AJSON
+ * @author BroadBrander <info@broadbrander.com>
+ * @license MIT
+ * @description A tiny HTTP client for the browser.
  */
 window.ajson = function ({
   method: method = "GET", // HTTP request method (GET, POST, DELETE, PUT etc.)
   url: url, // URL to request
   async: async = true, // Boolean to set the http request async
-  data: data = {}, // Data to to send
+  data: data, // Data to to send
   contentType: contentType = "application/x-www-form-urlencoded; charset=UTF-8", // content type of data
-  dataType: dataType = null, // response datatype
-  headers: headers = null, // Object of headers
+  responseType: responseType = null, // response data type (example: JSON)
+  headers: headers = {}, // Object of http request headers
   mimeType: mimeType = null, // Overwrite MimeType
   username: username = null, // User name for authentication
   password: password = null, // Password for authentication
@@ -44,10 +47,12 @@ window.ajson = function ({
     http.onloadstart = startCallback;
   }
 
+  // Callback funtion to run on download progress
   if (typeof downloadProgress === "function") {
     http.onprogress = downloadProgress;
   }
 
+  // Callback funtion to run on upload progress
   if (typeof uploadProgress === "function") {
     http.upload.onprogress = uploadProgress;
   }
@@ -56,7 +61,8 @@ window.ajson = function ({
   http.onload = function (event) {
     // The result
     var result;
-    if (dataType === "json" || dataType === "JSON") {
+    // if responseType is json, parse json
+    if (responseType === "json" || responseType === "JSON") {
       result = JSON.parse(http.response);
     } else {
       result = http.response;
@@ -78,20 +84,23 @@ window.ajson = function ({
     }
   };
 
-  // error callback function
+  // Callback function to run on request fail
   if (typeof failCallback === "function") {
     http.onerror = failCallback;
   }
 
+  // Callback function to run on end of the request
   if (typeof endCallback === "function") {
     http.onloadend = endCallback;
   }
 
+  // make the request method name lowercase
   method = method.toLowerCase();
 
+  // url encode data
   var finalData = "";
   for (var key in data) {
-    if (data !== null) {
+    if (typeof data === "object") {
       if (finalData != "") {
         finalData += "&";
       }
@@ -101,30 +110,34 @@ window.ajson = function ({
   // process the data to send
   if (method == "get") {
     url = url + "?" + finalData;
-  } else {
+  }
+
+  // url encode on post request with default content type header
+  if (
+    method === "post" &&
+    contentType === "application/x-www-form-urlencoded; charset=UTF-8"
+  ) {
     data = finalData;
   }
 
+  // open http request
   http.open(method, url, async, username, password);
 
+  // overwrite content-type header
+  http.setRequestHeader("Content-type", contentType);
+
+  // overwrite mime type
   if (mimeType !== null) {
     http.overrideMimeType(mimeType);
   }
 
-  if (method == "post") {
-    http.setRequestHeader(
-      "Content-type",
-      "application/x-www-form-urlencoded; charset=UTF-8"
-    );
-  } else {
-    http.setRequestHeader("Content-type", contentType);
-  }
-
+  // set http headers
   for (var hdr in headers) {
-    if (headers !== null) {
+    if (headers !== {}) {
       http.setRequestHeader(hdr, headers[hdr]);
     }
   }
 
+  // finally send the data
   return http.send(data);
 };

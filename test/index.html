@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="index.js"></script>
+    <script src="../src/index.js"></script>
   </head>
   <body>
     Body
     <script>
       ajson({
-        method: "get",
-        url:
-          "https://images.unsplash.com/photo-1599615381612-7bcc78cfd851?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=andrea-davis-tdVSXk8A2bI-unsplash.jpg",
+        method: "post",
+        url: "/test/test.php",
+        data: { name: "this", age: "10" },
         async: true,
         //username: "user",
         //password: "pass",

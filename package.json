@@ -1,14 +1,11 @@
 {
   "name": "ajson",
-  "version": "0.0.1",
-  "description": "An ajson library to make ajax easy",
+  "version": "0.1.0",
+  "description": "A tiny HTTP client for the browser.",
   "main": "dist/index.js",
-  "scripts": {
-    "help": ""
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BroadBrander/ajson.git"
+    "url": "https://github.com/BroadBrander/ajson.git"
   },
   "keywords": [
     "ajax",
