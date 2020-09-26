@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    Body
+    <script>
+      ajson({
+        method: "get",
+        url:
+          "https://images.unsplash.com/photo-1599615381612-7bcc78cfd851?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=andrea-davis-tdVSXk8A2bI-unsplash.jpg",
+        async: true,
+        //username: "user",
+        //password: "pass",
+        before: () => {
+          console.log("before");
+        },
+        start: () => {
+          console.log("started");
+        },
+        uploadProgress: (e) => {
+          console.log(e);
+        },
+        downloadProgress: (e) => {
+          console.log(e);
+        },
+        success: (e) => {
+          console.log(e);
+        },
+        complete: (e) => {
+          console.log(e);
+        },
+        fail: (e) => {
+          console.log(e);
+        },
+      });
+    </script>
+  </body>
+</html>

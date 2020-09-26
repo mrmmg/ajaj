@@ -1,0 +1,27 @@
+{
+  "name": "ajson",
+  "version": "0.0.1",
+  "description": "An ajson library to make ajax easy",
+  "main": "dist/index.js",
+  "scripts": {
+    "help": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BroadBrander/ajson.git"
+  },
+  "keywords": [
+    "ajax",
+    "http",
+    "xhr",
+    "xhttprequest",
+    "request"
+  ],
+  "author": "BroadBrander",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BroadBrander/ajson/issues"
+  },
+  "homepage": "https://github.com/BroadBrander/ajson#readme",
+  "dependencies": {}
+}
