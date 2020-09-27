@@ -1,7 +1,7 @@
 {
   "name": "@broadbrander/ajaj",
   "version": "0.2.1",
-  "description": "A tiny HTTP client for the browser.",
+  "description": "A new tiny 1.2KB (657B gzipped) HTTP client for browser.",
   "main": "dist/ajaj.npm.js",
   "repository": {
     "type": "git",
@@ -12,6 +12,7 @@
     "http",
     "xhr",
     "xhttprequest",
+    "axios",
     "request"
   ],
   "author": "BroadBrander",

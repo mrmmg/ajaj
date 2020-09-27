@@ -1,9 +1,16 @@
 <?php
+$server = $_SERVER;
 
-print_r($_SERVER);
+$get = $_GET;
+$post = $_POST;
 
-print_r($_GET);
+$data = file_get_contents("php://input");
 
-print_r($_POST);
+$final  = array(
+    'server' => $server,
+    'get' => $get,
+    'post' => $post,
+    'other' => $data,
+);
 
-print_r(file_get_contents("php://input"), $post_vars);
+print_r(json_encode($final));

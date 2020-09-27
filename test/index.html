@@ -3,41 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>AJAJ</title>
     <script src="../src/index.js"></script>
+    <script src="test/test.js"></script>
   </head>
   <body>
-    Body
-    <script>
-      ajaj({
-        method: "post",
-        url: "/test/test.php",
-        data: { name: "this", age: "10" },
-        async: true,
-        //username: "user",
-        //password: "pass",
-        before: () => {
-          console.log("before");
-        },
-        start: () => {
-          console.log("started");
-        },
-        uploadProgress: (e) => {
-          console.log(e);
-        },
-        downloadProgress: (e) => {
-          console.log(e);
-        },
-        success: (e) => {
-          console.log(e);
-        },
-        complete: (e) => {
-          console.log(e);
-        },
-        fail: (e) => {
-          console.log(e);
-        },
-      });
-    </script>
+    <div class="console">Open Console</div>
   </body>
 </html>
