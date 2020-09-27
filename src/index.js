@@ -1,6 +1,6 @@
 /**
  * @package AJAJ
- * @version 0.1.3
+ * @version 0.2.0
  * @author BroadBrander <info@broadbrander.com>
  * @license MIT
  * @description A tiny HTTP client for the browser.

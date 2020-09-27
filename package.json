@@ -1,6 +1,6 @@
 {
   "name": "@broadbrander/ajaj",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "A tiny HTTP client for the browser.",
   "main": "dist/ajaj.npm.js",
   "repository": {
